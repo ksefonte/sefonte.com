@@ -42,7 +42,7 @@ jobs:
             echo "Building application..."
             npm run build
             echo "Restarting PM2..."
-            pm2 restart sefonte
+            pm2 restart ecosystem.config.js --update-env
             echo "Deployment complete!"
           EOF
       
