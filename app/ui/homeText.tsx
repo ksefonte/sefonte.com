@@ -16,19 +16,19 @@ export default function HomeText ({ header, subHeader }: HomeTextProps): JSX.Ele
   const subHeaderRef = useRef<HTMLHeadingElement>(null)
   useEffect(() => {
     if (headerRef.current && subHeaderRef.current) {
-      const splitHeader = new SplitText(headerRef.current, { type: "chars" });
-      const splitSubHeader = new SplitText(subHeaderRef.current, { type: "chars" });
+      const splitHeader = new SplitText(headerRef.current, { type: "words" });
+      const splitSubHeader = new SplitText(subHeaderRef.current, { type: "words" });
     }
   })
 
   return(
-    <>
-      <h1 ref={headerRef} className="text-6xl font-semibold leading-10 tracking-tight text-zinc-950 dark:text-zinc-50">
+    <div className="flex flex-col lg:gap-2 gap-1 z-10">
+      <h1 ref={headerRef} className="lg:text-6xl text-4xl font-semibold tracking-tight z-10 text-zinc-950 dark:text-zinc-50">
         {header}
       </h1>
-      <h2 ref={subHeaderRef} className="text-3xl font-light leading-10 tracking-tight text-zinc-800 dark:text-zinc-50">
+      <h2 ref={subHeaderRef} className="lg:text-3xl text-2xl font-light tracking-tight text-zinc-800 dark:text-zinc-50">
         {subHeader}
       </h2>
-    </>
+    </div>
   )
 }

@@ -1,18 +1,24 @@
 import HomeText from "./ui/homeText";
+import SplitLayout from "./ui/splitLayout";
 
 export default function Home() {
+  const menuItems = [
+    { name: "Github", url: "https://github.com/ksefonte" },
+    { name: "Also Github", url: "https://github.com/ksefonte" },
+    { name: "Yeah, still Github", url: "https://github.com/ksefonte" }
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#f7f7f7] font-elms dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-full flex-col items-center justify-between py-32 px-16 bg-[#f7f7f7] dark:bg-black sm:items-start">
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left mt-auto">
+    <div className="min-h-screen bg-[#f7f7f7] font-elms dark:bg-black">
+      <SplitLayout
+        leftContent={
           <HomeText
             header="sefonte.com"
-            subHeader="Home website for Kyle Sefonte"
+            subHeader="Landing page for Kyle Sefonte"
           />
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-        </div>
-      </main>
+        }
+        menuItems={menuItems}
+      />
     </div>
   );
 }
