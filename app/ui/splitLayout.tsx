@@ -81,7 +81,8 @@ export default function SplitLayout({ leftContent, menuItems = [] }: SplitLayout
         gsap.to(dividerRef.current, {
           height: 0,
           opacity: 0,
-          duration: 0.3,
+          delay: 0.3,
+          duration: 0.6,
           ease: 'power2.in'
         });
       }
@@ -220,7 +221,7 @@ export default function SplitLayout({ leftContent, menuItems = [] }: SplitLayout
         {/* Dividing line - vertical on desktop, horizontal on mobile */}
         <div
           ref={dividerRef}
-          className="absolute lg:top-0 lg:right-0 lg:w-px lg:h-0 top-1/2 left-0 w-0 h-px bg-zinc-950 dark:bg-zinc-50 opacity-0 z-40"
+          className="absolute lg:top-0 lg:right-0 lg:w-px lg:h-0 top-1/2 right-0 w-0 h-px bg-zinc-950 dark:bg-zinc-50 opacity-0 z-40"
         />
       </div>
 
