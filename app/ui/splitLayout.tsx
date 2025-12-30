@@ -182,7 +182,7 @@ export default function SplitLayout({ leftContent, menuItems = [] }: SplitLayout
       {/* Desktop left side / Mobile full screen container */}
       <div
         ref={leftSideRef}
-        className="relative lg:w-[35%] lg:flex-none lg:h-auto lg:min-h-screen min-h-screen flex items-end lg:pb-32 pb-16 px-8 transition-colors duration-300 overflow-hidden"
+        className="relative lg:w-[35%] lg:flex-none lg:h-auto lg:min-h-screen min-h-screen flex items-end pb-16 lg:pb-32 px-8 transition-colors duration-300 overflow-hidden"
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
         onTouchStart={() => setIsHovering(true)}

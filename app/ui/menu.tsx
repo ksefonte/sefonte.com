@@ -62,8 +62,8 @@ export default function Menu({ items, isVisible, onClose, isMobile = false }: Me
   }, [isVisible, isMobile]);
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center relative">
-      <nav className="w-full max-w-md mt-auto mb-32 px-6">
+    <div className="w-full h-full flex flex-col relative">
+      <nav className="w-full max-w-md mt-auto mb-16 lg:mb-32 px-6">
         <ul className="flex flex-col gap-6">
           {items.map((item, index) => {
             const isExternal = item.url.startsWith('http');
