@@ -1,7 +1,6 @@
 # sefonte.com
 
-Codebase for sefonte.com, using Next.js
-
+Codebase for sefonte.com
 
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
@@ -22,9 +21,9 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Hosting
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This app is hosted on a small AWS Lightsail instance, utilising pm2 and nginx for process and web server management.
 
 ## Learn More
 
