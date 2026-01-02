@@ -2,10 +2,14 @@
 
 import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
-import { useMenu } from './context/MenuContext';
-import HomeText from "./ui/homeText";
+import { useMenu } from '../context/MenuContext';
 
-export default function Home() {
+interface ContentWrapperProps {
+  title: string;
+  content: React.ReactNode;
+}
+
+export default function ContentWrapper({ title, content }: ContentWrapperProps) {
   const { showMenu, isMobile } = useMenu();
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -54,12 +58,16 @@ export default function Home() {
     <div className="min-h-screen bg-[#f7f7f7] font-elms dark:bg-black overflow-hidden">
       <div
         ref={contentRef}
-        className="min-h-screen flex items-end pb-16 lg:pb-32 px-8"
+        className="relative min-h-screen"
       >
-        <HomeText
-          header="sefonte.com"
-          subHeader="Landing page for Kyle Sefonte"
-        />
+        <div className="max-w-4xl px-8 py-16 lg:py-24">
+          <h1 className="text-5xl lg:text-6xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 mb-8">
+            {title}
+          </h1>
+          <div className="prose prose-lg dark:prose-invert max-w-none">
+            {content}
+          </div>
+        </div>
       </div>
     </div>
   );
