@@ -76,7 +76,7 @@ export default function Timeline({ items }: TimelineProps) {
             <div key={item.id} className="flex items-center shrink-0">
               {/* Textbox */}
               <div
-                ref={(el) => (itemRefs.current[index] = el)}
+                ref={(el) => { itemRefs.current[index] = el; }}
                 className="relative transition-all duration-500"
               >
                 <SketchyBox
