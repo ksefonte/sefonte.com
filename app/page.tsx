@@ -58,7 +58,7 @@ export default function Home() {
       >
         <HomeText
           header="sefonte.com"
-          subHeader="Landing page for Kyle Sefonte"
+          subHeader="web & software development shennanigans. and possibly other stuff."
         />
       </div>
     </div>
