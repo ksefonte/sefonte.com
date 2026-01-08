@@ -58,7 +58,7 @@ export default function ContentWrapper({ title, content }: ContentWrapperProps) 
     <div className="min-h-screen bg-[#f7f7f7] font-elms dark:bg-black overflow-hidden">
       <div
         ref={contentRef}
-        className="relative min-h-screen"
+        className="relative min-h-screen py-4"
       >
         <div className="max-w-4xl px-8 py-16 lg:py-24">
           <h1 className="text-5xl lg:text-6xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 mb-8">
