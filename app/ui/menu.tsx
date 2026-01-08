@@ -79,6 +79,13 @@ export default function Menu({ items, isVisible, onClose, isMobile = false, vari
     }
   };
 
+  const handleLinkClick = () => {
+    // Close menu when clicking a routing link
+    if (onClose) {
+      onClose();
+    }
+  };
+
   const isPageVariant = variant === 'page';
 
   return (
@@ -130,6 +137,7 @@ export default function Menu({ items, isVisible, onClose, isMobile = false, vari
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={handleLinkClick}
                       className="text-4xl font-bold text-zinc-800 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors duration-200"
                     >
                       {item.name}
@@ -137,6 +145,7 @@ export default function Menu({ items, isVisible, onClose, isMobile = false, vari
                   ) : (
                     <Link
                       href={item.url}
+                      onClick={handleLinkClick}
                       className={`text-4xl font-bold transition-colors duration-200 ${
                         isActive
                           ? 'text-zinc-950 dark:text-zinc-50 underline'
@@ -156,6 +165,7 @@ export default function Menu({ items, isVisible, onClose, isMobile = false, vari
                           <li key={subIndex}>
                             <Link
                               href={subItem.url}
+                              onClick={handleLinkClick}
                               className={`text-2xl font-medium transition-colors duration-200 ${
                                 isSubActive
                                   ? 'text-zinc-950 dark:text-zinc-50 underline'
