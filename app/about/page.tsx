@@ -6,8 +6,11 @@ export default function About() {
       title="About"
       content={
         <div className="space-y-4">
-          <p className="text-lg text-zinc-700 dark:text-zinc-300">
-            This is the about page. Add your content here.
+          <p className="text-lg text-zinc-700 dark:text-zinc-300 w-full">
+            Ecommerce specialist, analyst and software developer. Having fun with an empty canvas.
+          </p>
+          <p className="font-extrabold text-2xl">
+            timeline
           </p>
         </div>
       }
