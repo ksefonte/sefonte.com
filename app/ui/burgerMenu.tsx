@@ -60,7 +60,7 @@ export default function BurgerMenu({ isOpen, onToggle }: BurgerMenuProps) {
     <button
       onClick={onToggle}
       data-burger-menu
-      className="fixed top-8 left-8 z-50 w-12 h-12 flex flex-col items-center justify-center gap-2 bg-zinc-100 dark:bg-zinc-900 rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors duration-200"
+      className="fixed top-8 left-8 z-50 w-12 h-12 flex flex-col items-center justify-center gap-2 bg-zinc-100 dark:bg-zinc-900 rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-600 focus:bg-zinc-200 dark:focus:bg-zinc-800"
       aria-label={isOpen ? 'Close menu' : 'Open menu'}
     >
       <div

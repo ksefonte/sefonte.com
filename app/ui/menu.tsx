@@ -109,11 +109,11 @@ export default function Menu({ items, isVisible, onClose, isMobile = false, vari
                   {hasSubItems ? (
                     <button
                       onClick={() => toggleExpanded(index, true)}
-                      className={`text-4xl font-bold transition-colors duration-200 text-left flex items-center gap-2 ${
+                      className={`text-4xl font-bold transition-all duration-200 text-left flex items-center gap-2 rounded-lg px-2 py-1 -mx-2 ${
                         isActive
                           ? 'text-zinc-950 dark:text-zinc-50'
-                          : 'text-zinc-800 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50'
-                      }`}
+                          : 'text-zinc-800 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50 hover:bg-zinc-200 dark:hover:bg-zinc-800'
+                      } focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-600 focus:bg-zinc-200 dark:focus:bg-zinc-800`}
                     >
                       {item.name}
                       <svg
@@ -138,7 +138,7 @@ export default function Menu({ items, isVisible, onClose, isMobile = false, vari
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={handleLinkClick}
-                      className="text-4xl font-bold text-zinc-800 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors duration-200"
+                      className="text-4xl font-bold text-zinc-800 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-all duration-200 rounded-lg px-2 py-1 -mx-2 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-600 focus:bg-zinc-200 dark:focus:bg-zinc-800"
                     >
                       {item.name}
                     </a>
@@ -146,11 +146,11 @@ export default function Menu({ items, isVisible, onClose, isMobile = false, vari
                     <Link
                       href={item.url}
                       onClick={handleLinkClick}
-                      className={`text-4xl font-bold transition-colors duration-200 ${
+                      className={`text-4xl font-bold transition-all duration-200 rounded-lg px-2 py-1 -mx-2 ${
                         isActive
                           ? 'text-zinc-950 dark:text-zinc-50 underline'
-                          : 'text-zinc-800 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50'
-                      }`}
+                          : 'text-zinc-800 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50 hover:bg-zinc-200 dark:hover:bg-zinc-800'
+                      } focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-600 focus:bg-zinc-200 dark:focus:bg-zinc-800`}
                     >
                       {item.name}
                     </Link>
@@ -166,11 +166,11 @@ export default function Menu({ items, isVisible, onClose, isMobile = false, vari
                             <Link
                               href={subItem.url}
                               onClick={handleLinkClick}
-                              className={`text-2xl font-medium transition-colors duration-200 ${
+                              className={`text-2xl font-medium transition-all duration-200 rounded-lg px-2 py-1 -mx-2 inline-block ${
                                 isSubActive
                                   ? 'text-zinc-950 dark:text-zinc-50 underline'
-                                  : 'text-zinc-600 dark:text-zinc-500 hover:text-zinc-950 dark:hover:text-zinc-50'
-                              }`}
+                                  : 'text-zinc-600 dark:text-zinc-500 hover:text-zinc-950 dark:hover:text-zinc-50 hover:bg-zinc-200 dark:hover:bg-zinc-800'
+                              } focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-600 focus:bg-zinc-200 dark:focus:bg-zinc-800`}
                             >
                               {subItem.name}
                             </Link>
