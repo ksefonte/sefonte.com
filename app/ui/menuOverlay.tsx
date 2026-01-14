@@ -142,6 +142,39 @@ export default function MenuOverlay() {
     }
   }, [showMenu]);
 
+  // Close menu on Escape key
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isMenuOpen) {
+        toggleMenu();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isMenuOpen, toggleMenu]);
+
+  // Close menu on click outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (!isMenuOpen || !leftSideRef.current) return;
+
+      const target = event.target as Node;
+
+      // Don't close if clicking the burger menu button
+      const burgerButton = document.querySelector('[data-burger-menu]');
+      if (burgerButton?.contains(target)) return;
+
+      // Close if clicking outside the menu overlay
+      if (!leftSideRef.current.contains(target)) {
+        toggleMenu();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isMenuOpen, toggleMenu]);
+
   return (
     <>
       <BurgerMenu isOpen={isMenuOpen} onToggle={toggleMenu}/>
