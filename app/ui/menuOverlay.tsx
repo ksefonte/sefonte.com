@@ -5,25 +5,17 @@ import { gsap } from 'gsap';
 import { useMenu } from '../context/MenuContext';
 import BurgerMenu from './burgerMenu';
 import Menu from './menu';
+import type { MenuItem } from '../lib/strapi';
 
-export default function MenuOverlay() {
+interface MenuOverlayProps {
+  menuItems: MenuItem[];
+}
+
+export default function MenuOverlay({ menuItems }: MenuOverlayProps) {
   const { isMenuOpen, showMenu, isMobile, toggleMenu, setIsMobile, setShowMenu } = useMenu();
   const dividerRef = useRef<HTMLDivElement>(null);
   const leftSideRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
-
-  const menuItems = [
-    { name: "Home", url: "/" },
-    { name: "About", url: "/about" },
-    {
-      name: "Projects",
-      url: "/projects",
-      subItems: [
-        { name: "Project A", url: "/projects/project-a" },
-        { name: "Project B", url: "/projects/project-b" }
-      ]
-    }
-  ];
 
   // Detect screen size
   useEffect(() => {

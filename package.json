@@ -3,9 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "concurrently \"npm run dev:next\" \"npm run dev:strapi\"",
+    "dev:next": "next dev",
+    "dev:strapi": "npm run develop --prefix strapi",
+    "build": "npm run build:strapi && npm run build:next",
+    "build:next": "next build",
+    "build:strapi": "npm run build --prefix strapi",
+    "start": "concurrently \"npm run start:next\" \"npm run start:strapi\"",
+    "start:next": "next start",
+    "start:strapi": "npm run start --prefix strapi",
     "lint": "eslint"
   },
   "dependencies": {
@@ -19,6 +25,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^9.1.2",
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
     "tailwindcss": "^4",
