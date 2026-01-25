@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_menu_sub_menu_items",
+  "info": {
+    "displayName": "Sub Menu Item",
+    "icon": "link",
+    "description": "A submenu item with name and URL"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

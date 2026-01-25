@@ -39,3 +39,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Strapi
+strapi/.tmp
+strapi/.cache
+strapi/build
+strapi/node_modules
+strapi/.strapi
+strapi/public/uploads/*
+!strapi/public/uploads/.gitkeep
+strapi/*.log
+
+# Strapi SQLite database
+strapi/.tmp/data.db
